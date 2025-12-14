@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <div align="justify">
 **Waste to Worth** is a non-profit Android application developed to reduce waste and help people in need by connecting donors with underprivileged individuals and organizations. In India, many usable items like food, clothes, and books are thrown away every day while millions lack access to these essentials. This app provides a simple, real-time, and location-based platform where users can donate or receive items easily. **Built using Android Studio with Java and XML**, it offers secure login, an easy-to-use interface, and map integration to find nearby donors, receivers, and volunteers.
 
