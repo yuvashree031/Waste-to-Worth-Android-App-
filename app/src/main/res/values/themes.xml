@@ -1,0 +1,105 @@
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <!-- Base application theme. -->
+    <style name="Theme.WasteToWorth" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/pastel_blue_primary</item>
+        <item name="colorPrimaryVariant">@color/pastel_blue_dark</item>
+        <item name="colorOnPrimary">@color/clean_white</item>
+        
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/pastel_lavender_accent</item>
+        <item name="colorSecondaryVariant">@color/pastel_lavender_dark</item>
+        <item name="colorOnSecondary">@color/clean_white</item>
+        
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/pastel_blue_light</item>
+        <item name="android:navigationBarColor">@color/clean_white</item>
+        
+        <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@color/background_off_white</item>
+        <item name="android:textColor">@color/dark_navy_text</item>
+        <item name="android:textColorPrimary">@color/dark_navy_text</item>
+        <item name="android:textColorSecondary">@color/soft_text_grey</item>
+        
+        <!-- Material Components theming -->
+        <item name="materialButtonStyle">@style/Widget.App.Button</item>
+        <item name="cardViewStyle">@style/Widget.App.CardView</item>
+    </style>
+
+    <!-- Button Style -->
+    <style name="Widget.App.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:background">@drawable/button_rounded</item>
+        <item name="android:textColor">@color/clean_white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+    
+    <!-- CardView Style -->
+    <style name="Widget.App.CardView" parent="@style/Widget.MaterialComponents.CardView">
+        <item name="cardElevation">2dp</item>
+        <item name="cardCornerRadius">16dp</item>
+        <item name="contentPadding">16dp</item>
+        <item name="cardBackgroundColor">@color/white</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+    
+    <!-- EditText Style -->
+    <style name="Widget.App.EditText" parent="Widget.MaterialComponents.TextInputEditText.OutlinedBox">
+        <item name="android:textColor">@color/dark_text</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:background">@drawable/edit_text_background</item>
+    </style>
+    
+    <!-- TextInputLayout Style -->
+    <style name="Widget.App.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/pastel_blue_primary</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="boxStrokeWidthFocused">2dp</item>
+        <item name="boxCornerRadiusBottomEnd">4dp</item>
+        <item name="boxCornerRadiusBottomStart">4dp</item>
+        <item name="boxCornerRadiusTopEnd">4dp</item>
+        <item name="boxCornerRadiusTopStart">4dp</item>
+        <item name="hintTextColor">@color/soft_text_grey</item>
+        <item name="android:textColorHint">@color/soft_text_grey</item>
+        <item name="hintTextAppearance">@style/TextAppearance.App.TextInputLayout</item>
+        <item name="boxBackgroundColor">@android:color/transparent</item>
+        <item name="boxBackgroundMode">outline</item>
+    </style>
+    
+    <!-- App Theme with ActionBar -->
+    <style name="Theme.WasteToWorth.AppBar" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar">
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/white</item>
+        <item name="colorPrimary">@color/primary_dark_blue</item>
+        <item name="colorPrimaryDark">@color/primary_dark_blue</item>
+        <item name="colorAccent">@color/accent_blue</item>
+        <item name="actionMenuTextColor">@color/white</item>
+    </style>
+    
+    <!-- NoActionBar theme -->
+    <style name="Theme.WasteToWorth.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- AppBarOverlay theme -->
+    <style name="Theme.WasteToWorth.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
+
+    <!-- PopupOverlay theme -->
+    <style name="Theme.WasteToWorth.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
+    
+    <!-- Splash Screen Theme -->
+    <style name="SplashScreen" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@color/clean_white</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowActionModeOverlay">false</item>
+    </style>
+</resources>

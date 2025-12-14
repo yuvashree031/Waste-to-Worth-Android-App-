@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_off_white"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <!-- App Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_marginBottom="24dp">
+
+        <!-- NGO Icon -->
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_food_bank"
+            android:layout_marginBottom="16dp"
+            app:tint="@color/pastel_lavender_accent" />
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/tv_ngo_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NGO Login"
+            android:textColor="@color/dark_navy_text"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.05"/>
+
+        <!-- Subtitle -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign in to your organization account"
+            android:textSize="16sp"
+            android:textColor="@color/soft_text_grey"
+            android:layout_marginTop="8dp"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+    <!-- Login Form Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="@color/clean_white"
+        app:strokeColor="@color/border_light"
+        app:strokeWidth="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Email Field -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/emailError"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:boxStrokeColor="@color/pastel_lavender_accent"
+                app:boxStrokeWidth="2dp"
+                app:hintTextColor="@color/pastel_lavender_accent"
+                app:startIconDrawable="@drawable/ic_baseline_email_24"
+                app:startIconTint="@color/pastel_lavender_accent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_ngo_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Organization Email"
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/dark_navy_text"
+                    android:textColorHint="@color/soft_text_grey"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Password Field -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/passError"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:boxStrokeColor="@color/pastel_lavender_accent"
+                app:boxStrokeWidth="2dp"
+                app:hintTextColor="@color/pastel_lavender_accent"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/pastel_lavender_accent"
+                app:startIconDrawable="@drawable/ic_baseline_lock_24"
+                app:startIconTint="@color/pastel_lavender_accent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_ngo_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:textColor="@color/dark_navy_text"
+                    android:textColorHint="@color/soft_text_grey"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Login Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_ngo_login"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginBottom="16dp"
+                android:text="LOGIN AS NGO"
+                android:textAllCaps="true"
+                android:textColor="@color/clean_white"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                app:backgroundTint="@color/pastel_lavender_accent"
+                app:cornerRadius="12dp"
+                app:icon="@drawable/ic_baseline_arrow_forward_24"
+                app:iconGravity="end"
+                app:iconTint="@color/clean_white"/>
+
+            <!-- Register NGO Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_register_ngo"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Register New NGO"
+                android:textAllCaps="true"
+                android:textColor="@color/pastel_lavender_accent"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                app:backgroundTint="@color/clean_white"
+                app:cornerRadius="12dp"
+                app:strokeColor="@color/pastel_lavender_accent"
+                app:strokeWidth="2dp"/>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Back to People Login -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Not an NGO?"
+            android:textColor="@color/soft_text_grey"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:id="@+id/tv_back_to_people"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="Login as Individual"
+            android:textColor="@color/pastel_blue_primary"
+            android:textStyle="bold"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+</LinearLayout>

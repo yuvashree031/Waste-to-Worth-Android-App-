@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background_off_white"
+    android:padding="32dp"
+    android:gravity="center">
+
+    <!-- Welcome Text -->
+    <TextView
+        android:id="@+id/tv_welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to WasteToWorth"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="@color/dark_navy_text"
+        android:layout_marginBottom="8dp"
+        android:gravity="center" />
+
+    <!-- Subtitle -->
+    <TextView
+        android:id="@+id/tv_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="How would you like to use our platform?"
+        android:textSize="16sp"
+        android:textColor="@color/dark_navy_text"
+        android:alpha="0.9"
+        android:layout_marginBottom="48dp"
+        android:gravity="center" />
+
+    <!-- People Card -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="@android:color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:gravity="center">
+
+            <!-- People Icon -->
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:src="@drawable/ic_person"
+                android:layout_marginBottom="16dp"
+                app:tint="@color/pastel_blue_primary" />
+
+            <!-- People Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Individual User"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/pastel_blue_primary"
+                android:layout_marginBottom="8dp" />
+
+            <!-- People Description -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Donate food, clothes, and other items to help those in need"
+                android:textSize="14sp"
+                android:textColor="@color/soft_text_grey"
+                android:gravity="center"
+                android:layout_marginBottom="24dp" />
+
+            <!-- People Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_people"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Continue as Individual"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:padding="16dp"
+                app:backgroundTint="@color/colorPrimary"
+                android:textColor="@color/white"
+                app:cornerRadius="8dp"
+                app:elevation="4dp" />
+
+            <!-- NGO Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="@android:color/white"
+        app:strokeColor="@color/pastel_violet_dark"
+        app:strokeWidth="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:gravity="center">
+
+            <!-- Register as NGO Button -->
+            <Button
+                android:id="@+id/btn_register_ngo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Register as NGO"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:textColor="@android:color/white"
+                android:padding="12dp" />
+
+            <!-- NGO Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NGO Organization"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/pastel_violet_dark"
+                android:layout_marginBottom="8dp" />
+
+            <!-- NGO Description -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Register your organization to receive donations and manage operations"
+                android:textSize="14sp"
+                android:textColor="@color/soft_text_grey"
+                android:gravity="center"
+                android:layout_marginBottom="24dp" />
+
+            <!-- NGO Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_ngo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Continue as NGO"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:padding="16dp"
+                app:backgroundTint="@color/pastel_violet_dark"
+                android:textColor="@color/white"
+                app:cornerRadius="8dp"
+                app:elevation="4dp" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</LinearLayout>

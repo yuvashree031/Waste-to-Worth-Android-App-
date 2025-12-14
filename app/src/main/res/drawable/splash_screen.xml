@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/primary_dark_blue" />
+    
+    <item>
+        <bitmap
+            android:gravity="center"
+            android:src="@mipmap/ic_launcher_foreground"
+            android:scaleType="centerCrop" />
+    </item>
+    
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="135"
+                android:endColor="@android:color/transparent"
+                android:startColor="@color/primary_dark_blue"
+                android:type="linear" />
+        </shape>
+    </item>
+    
+    <item android:gravity="bottom">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/primary_dark_blue" />
+            <size android:height="120dp" />
+            <gradient
+                android:angle="90"
+                android:endColor="@android:color/transparent"
+                android:startColor="@color/primary_dark_blue"
+                android:type="linear" />
+        </shape>
+    </item>
+    
+    <item android:gravity="center">
+        <bitmap
+            android:gravity="center"
+            android:src="@mipmap/ic_launcher_foreground"
+            android:width="200dp"
+            android:height="200dp" />
+    </item>
+    
+    <item android:gravity="bottom|center_horizontal" android:bottom="80dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textColor="@color/white"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium"
+            android:letterSpacing="0.05"
+            android:shadowColor="@color/black"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2" />
+    </item>
+</layer-list>

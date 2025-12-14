@@ -1,0 +1,113 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
+}
+
+android {
+    namespace "com.example.wastetoworth"
+    compileSdk 34
+    
+    defaultConfig {
+        applicationId "com.example.wastetoworth"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    // Configure Java toolchain
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+        coreLibraryDesugaringEnabled false
+        encoding 'UTF-8'
+    }
+    
+    kotlinOptions {
+        jvmTarget = '17'
+        freeCompilerArgs += [
+            "-Xjvm-default=all"
+        ]
+    }
+    
+    // Enable view binding
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
+}
+
+dependencies {
+    // Core library desugaring for Java 8+ APIs on older Android versions
+    // coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.4'
+    
+    // AndroidX Core
+    implementation 'androidx.core:core-ktx:1.13.1'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    
+    // Firebase BoM (Bill of Materials)
+    implementation platform('com.google.firebase:firebase-bom:33.1.0')
+    implementation 'com.google.firebase:firebase-auth-ktx'
+    implementation 'com.google.firebase:firebase-firestore-ktx'
+    implementation 'com.google.firebase:firebase-storage-ktx'
+    implementation 'com.google.firebase:firebase-messaging-ktx'
+    implementation 'com.google.firebase:firebase-ml-modeldownloader-ktx'
+    
+    // Google Play Services
+    implementation 'com.google.android.gms:play-services-maps:18.2.0'
+    implementation 'com.google.android.gms:play-services-location:21.2.0'
+    
+    // ML Kit and TensorFlow Lite for ML features
+    implementation 'com.google.mlkit:image-labeling:17.0.8'
+    implementation 'com.google.mlkit:text-recognition:16.0.0'
+    implementation 'com.google.mlkit:language-id:17.0.5'
+    implementation 'org.tensorflow:tensorflow-lite:2.14.0'
+    implementation 'org.tensorflow:tensorflow-lite-support:0.4.4'
+    implementation 'org.tensorflow:tensorflow-lite-metadata:0.4.4'
+    implementation 'org.tensorflow:tensorflow-lite-gpu:2.14.0'
+    
+    // Voice Recognition - using Android's built-in SpeechRecognizer (no additional dependency needed)
+    
+    // Timber for logging
+    implementation 'com.jakewharton.timber:timber:5.0.1'
+    
+    // Glide for image loading
+    implementation 'com.github.bumptech.glide:glide:4.15.1'
+    implementation 'androidx.fragment:fragment:1.8.9'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.15.1'
+    
+    // Lottie for animations
+    implementation 'com.airbnb.android:lottie:6.1.0'
+    
+    // ViewPager2 for onboarding
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+    
+    // Circular ImageView
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    
+    // Shimmer effect for loading
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+    
+    // Chart library for analytics - using alternative or can be added later if needed
+    // implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+    
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
+}
+
+// Apply the Google Services plugin (make sure it's at the bottom)
+apply plugin: 'com.google.gms.google-services'

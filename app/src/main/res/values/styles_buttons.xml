@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base button style -->
+    <style name="Widget.WasteToWorth.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:paddingStart">24dp</item>
+        <item name="android:paddingEnd">24dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="cornerRadius">8dp</item>
+        <item name="elevation">2dp</item>
+        <item name="android:stateListAnimator">@animator/button_state_list_anim</item>
+    </style>
+
+    <!-- Contained button -->
+    <style name="Widget.WasteToWorth.Button.Contained" parent="Widget.WasteToWorth.Button">
+        <item name="backgroundTint">@color/primary_blue</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!-- Outlined button -->
+    <style name="Widget.WasteToWorth.Button.Outlined" parent="Widget.WasteToWorth.Button">
+        <item name="backgroundTint">@android:color/transparent</item>
+        <item name="strokeColor">@color/primary_blue</item>
+        <item name="strokeWidth">1.5dp</item>
+        <item name="android:textColor">@color/primary_blue</item>
+    </style>
+
+    <!-- Text button -->
+    <style name="Widget.WasteToWorth.Button.Text" parent="Widget.WasteToWorth.Button">
+        <item name="backgroundTint">@android:color/transparent</item>
+        <item name="android:textColor">@color/primary_blue</item>
+        <item name="elevation">0dp</item>
+    </style>
+
+    <!-- Floating action button -->
+    <style name="Widget.WasteToWorth.FloatingActionButton" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="backgroundTint">@color/primary_blue</item>
+        <item name="tint">@color/white</item>
+        <item name="elevation">6dp</item>
+        <item name="pressedTranslationZ">8dp</item>
+        <item name="borderWidth">0dp</item>
+        <item name="rippleColor">@color/white_20</item>
+    </style>
+
+    <!-- Chip style -->
+    <style name="Widget.WasteToWorth.Chip.Choice" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipBackgroundColor">@color/chip_background_selector</item>
+        <item name="chipStrokeColor">@color/chip_stroke_selector</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="android:textColor">@color/chip_text_selector</item>
+        <item name="android:checkable">true</item>
+        <item name="checkedIcon">@null</item>
+    </style>
+
+    <!-- Button state list animator -->
+    <style name="Widget.WasteToWorth.Button.StateListAnimator" parent="">
+        <item name="android:stateListAnimator">@animator/button_state_list_anim</item>
+    </style>
+</resources>

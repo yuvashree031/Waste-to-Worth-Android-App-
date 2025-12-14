@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp"
+    app:strokeColor="@color/pastel_mint"
+    app:strokeWidth="1dp"
+    android:backgroundTint="@color/pastel_white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Main Food Name - Prominent Display -->
+        <TextView
+            android:id="@+id/textFoodItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Item Name"
+            android:textColor="@color/soft_dark_text"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium" />
+
+        <!-- Quantity and Status Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/textQuantity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Quantity: 5 portions"
+                android:textColor="@color/soft_medium_text"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/textStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Available"
+                android:textColor="@color/success"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:background="@drawable/status_background"
+                android:padding="4dp"
+                android:layout_marginStart="8dp" />
+
+        </LinearLayout>
+
+        <!-- Location with Map Icon -->
+        <LinearLayout
+            android:id="@+id/layoutLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp"
+            android:background="?attr/selectableItemBackground"
+            android:padding="8dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_location_on"
+                app:tint="@color/primary_color"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:id="@+id/textLocation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Location: Chennai"
+                android:textColor="@color/soft_dark_text"
+                android:textSize="14sp"
+                android:maxLines="2"
+                android:ellipsize="end" />
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_chevron_right"
+                app:tint="@color/soft_medium_text"
+                android:layout_marginStart="8dp" />
+
+        </LinearLayout>
+
+        <!-- Action Buttons Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp"
+            android:gravity="center">
+
+            <!-- Call Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCall"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Call"
+                android:textColor="@color/pastel_blue_primary"
+                app:icon="@drawable/ic_call"
+                app:iconTint="@color/pastel_blue_primary"
+                app:strokeColor="@color/pastel_blue_primary"
+                app:strokeWidth="2dp"
+                android:layout_marginEnd="4dp" />
+
+            <!-- View Map Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnViewMap"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="View Map"
+                android:textColor="@color/pastel_lavender_accent"
+                app:icon="@drawable/ic_map"
+                app:iconTint="@color/pastel_lavender_accent"
+                app:strokeColor="@color/pastel_lavender_accent"
+                app:strokeWidth="2dp"
+                android:layout_marginStart="4dp" />
+
+        </LinearLayout>
+
+        <!-- Date and Time Info -->
+        <TextView
+            android:id="@+id/textDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Jan 15, 2024"
+            android:textColor="@color/soft_medium_text"
+            android:textSize="12sp"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

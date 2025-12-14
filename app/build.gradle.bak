@@ -1,0 +1,400 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+    id 'com.android.application' version '8.1.0' apply false
+    id 'com.google.gms.google-services' version '4.4.0' apply false
+    id 'org.jetbrains.kotlin.android' version '1.8.20' apply false
+    id 'androidx.navigation.safeargs.kotlin' version '2.7.5' apply false
+    id 'com.google.firebase.crashlytics' version '2.9.9' apply false
+    id 'com.google.firebase.firebase-perf' version '1.4.2' apply false
+    id 'org.jetbrains.kotlin.plugin.serialization' version '1.8.20' apply false
+}
+
+// Define versions in a single place
+ext {
+    // App version
+    versionCode = 1
+    versionName = '1.0.0'
+    
+    // SDK and tools
+    compileSdkVersion = 34
+    minSdkVersion = 24
+    targetSdkVersion = 34
+    
+    // Dependencies versions
+    kotlinVersion = '1.8.20'
+    coreKtxVersion = '1.12.0'
+    appcompatVersion = '1.6.1'
+    materialVersion = '1.11.0'
+    constraintLayoutVersion = '2.1.4'
+    navigationVersion = '2.7.5'
+    lifecycleVersion = '2.7.0'
+    coroutinesVersion = '1.7.3'
+    roomVersion = '2.6.1'
+    hiltVersion = '2.48.1'
+    retrofitVersion = '2.9.0'
+    okhttpVersion = '4.11.0'
+    glideVersion = '4.15.1'
+    timberVersion = '5.0.1'
+    junitVersion = '4.13.2'
+    extJunitVersion = '1.1.5'
+    espressoVersion = '3.5.1'
+    desugarJdkVersion = '2.0.4'
+    firebaseBomVersion = '32.7.2'
+    playServicesMapsVersion = '18.2.0'
+    playServicesLocationVersion = '21.0.1'
+    leakcanaryVersion = '2.12'
+    flipperVersion = '0.211.0'
+    soloaderVersion = '0.10.5'
+    koinVersion = '3.5.0'
+}
+
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+    id 'com.google.firebase.firebase-perf'
+    id 'androidx.navigation.safeargs.kotlin'
+}
+
+android {
+    namespace 'com.example.wastetoworth'
+    compileSdk rootProject.ext.compileSdkVersion
+    
+    defaultConfig {
+        applicationId "com.example.wastetoworth"
+        minSdk rootProject.ext.minSdkVersion
+        targetSdk rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        
+        // Enable Java 8+ API desugaring
+        multiDexKeepFile file('multidex-config.txt')
+        multiDexKeepProguard file('multidex-config.pro')
+        
+        // Vector drawable support
+        vectorDrawables.useSupportLibrary = true
+        
+        // Enable ViewBinding and DataBinding
+        buildFeatures {
+            viewBinding true
+            dataBinding true
+            buildConfig true
+        }
+        
+        // Set Java compatibility
+        compileOptions {
+            coreLibraryDesugaringEnabled true
+            sourceCompatibility JavaVersion.VERSION_17
+            targetCompatibility JavaVersion.VERSION_17
+        }
+        
+        // Kotlin options
+        kotlinOptions {
+            jvmTarget = '17'
+            freeCompilerArgs += [
+                "-Xjvm-default=all",
+                "-opt-in=kotlin.RequiresOptIn"
+            ]
+        }
+    
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+        buildConfig true
+    }
+    
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            
+            // Enable code and resource shrinking
+            isDebuggable false
+            isJniDebuggable false
+            isRenderscriptDebuggable false
+            isPseudoLocalesEnabled false
+            
+            // Disable PNG crunching for release builds
+            crunchPngs false
+            
+            // Enable Firebase Performance Monitoring
+            firebaseCrashlytics {
+                enableVariantSensitivityInAggregatedMetrics = true
+            }
+        }
+        
+        debug {
+            applicationIdSuffix ".debug"
+            versionNameSuffix "-debug"
+            minifyEnabled false
+            shrinkResources false
+            debuggable true
+            
+            // Enable Crashlytics only in release builds
+            firebaseCrashlytics {
+                mappingFileUploadEnabled false
+            }
+        }
+    }
+    
+    // Enable Java 8+ API desugaring
+    compileOptions {
+        coreLibraryDesugaringEnabled true
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    
+    // Kotlin options
+    kotlinOptions {
+        jvmTarget = '17'
+        freeCompilerArgs += [
+            "-Xjvm-default=all",
+            "-opt-in=kotlin.RequiresOptIn"
+        ]
+    }
+    
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
+        exclude 'META-INF/AL2.0'
+        exclude 'META-INF/LGPL2.1'
+        exclude 'META-INF/*.kotlin_module'
+    }
+    
+    compileOptions {
+        // Flag to enable support for the new language APIs
+        coreLibraryDesugaringEnabled true
+        
+        // Set Java compatibility to Java 17 (matching JVM target)
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    
+    // Lint options
+    lint {
+        baseline = file("lint-baseline.xml")
+        checkReleaseBuilds true
+        abortOnError true
+        warningsAsErrors true
+        disable 'ContentDescription'
+        disable 'SmallSp'
+        disable 'RtlSymmetry'
+    }
+    
+    // Enable data binding
+    buildFeatures {
+        dataBinding true
+        viewBinding true
+    }
+    
+    // Configure Java compilation
+    compileOptions {
+        coreLibraryDesugaringEnabled true
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main/java']
+            res.srcDirs = [
+                'src/main/res',
+                'src/main/res/layouts',
+                'src/main/res/layouts/activities',
+                'src/main/res/layouts/items',
+                'src/main/res/layouts/fragments',
+                'src/main/res/layouts/dialogs'
+            ]
+        }
+    }
+}
+
+// Configure Java compilation
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+    options.compilerArgs << "-Xmaxerrs" << "1000"
+}
+
+dependencies {
+    // Core AndroidX
+    coreLibraryDesugaring "com.android.tools:desugar_jdk_libs:$desugarJdkVersion"
+    implementation "androidx.multidex:multidex:2.0.1"
+    implementation "androidx.core:core-ktx:$coreKtxVersion"
+    implementation "androidx.appcompat:appcompat:$appcompatVersion"
+    implementation "com.google.android.material:material:$materialVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
+    implementation "androidx.activity:activity-ktx:1.8.2"
+    implementation "androidx.fragment:fragment-ktx:1.6.2"
+    
+    // Lifecycle components
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-process:$lifecycleVersion"
+    
+    // Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:$navigationVersion"
+    
+    // Firebase
+    implementation platform("com.google.firebase:firebase-bom:$firebaseBomVersion")
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-auth-ktx'
+    implementation 'com.google.firebase:firebase-firestore-ktx'
+    implementation 'com.google.firebase:firebase-storage-ktx'
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
+    implementation 'com.google.firebase:firebase-perf-ktx'
+    implementation 'com.google.firebase:firebase-messaging-ktx'
+
+    // Google Play Services
+    implementation "com.google.android.gms:play-services-maps:$playServicesMapsVersion"
+    implementation "com.google.android.gms:play-services-location:$playServicesLocationVersion"
+    
+    // UI Components
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    
+    // Image Loading
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+    kapt "com.github.bumptech.glide:compiler:$glideVersion"
+    
+    // Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:$coroutinesVersion"
+    
+    // Dependency Injection
+    implementation "io.insert-koin:koin-android:$koinVersion"
+    
+    // Logging
+    implementation "com.jakewharton.timber:timber:$timberVersion"
+    
+    // Testing
+    testImplementation "junit:junit:$junitVersion"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesVersion"
+    testImplementation 'org.mockito:mockito-core:5.8.0'
+    testImplementation 'org.mockito.kotlin:mockito-kotlin:5.1.0'
+    testImplementation "androidx.arch.core:core-testing:2.2.0"
+    
+    // Instrumentation tests
+    androidTestImplementation "androidx.test.ext:junit:$extJunitVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
+    androidTestImplementation 'androidx.test:runner:1.5.2'
+    androidTestImplementation 'androidx.test:rules:1.5.0'
+    androidTestImplementation 'androidx.test.uiautomator:uiautomator:2.3.0'
+    
+    // Debug tools
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:$leakcanaryVersion"
+    debugImplementation "com.facebook.flipper:flipper:$flipperVersion"
+    debugImplementation "com.facebook.soloader:soloader:$soloaderVersion"
+    debugImplementation ("com.facebook.flipper:flipper-network-plugin:$flipperVersion") {
+        exclude group: 'com.squareup.okhttp3', module: 'okhttp'
+    }
+
+// Configure Kotlin kapt
+kapt {
+    correctErrorTypes true
+    useBuildCache true
+}
+
+// Configure Java compilation
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.compilerArgs << "-Xmaxerrs" << "1000"
+}
+
+// Configure Kotlin compilation
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+    kotlinOptions {
+        jvmTarget = '17'
+        freeCompilerArgs += [
+            "-Xjvm-default=all",
+            "-opt-in=kotlin.RequiresOptIn"
+        ]
+    }
+}
+
+// Configure APK file name
+android.applicationVariants.all { variant ->
+    variant.outputs.all {
+        outputFileName = "WasteToWorth-${variant.name}-${variant.versionName}.apk"
+    }
+}
+
+// Enable parallel execution for faster builds
+tasks.whenTaskAdded { task ->
+    if (task.name.contains("Test")) {
+        task.maxParallelForks = Runtime.runtime.availableProcessors().intdiv(2) ?: 1
+    }
+}
+
+// Enable build cache
+buildCache {
+    local {
+        directory = new File(rootDir, 'build-cache')
+        removeUnusedEntriesAfterDays = 30
+    }
+}
+
+// Configure test options in the android block
+android {
+    // ... existing android configuration ...
+    
+    testOptions {
+        unitTests.returnDefaultValues = true
+        unitTests.includeAndroidResources = true
+        
+        unitTests.all {
+            useJUnitPlatform()
+            testLogging {
+                events "passed", "skipped", "failed"
+                showStandardStreams = true
+            }
+            
+            // Increase heap size for the test JVM
+            minHeapSize = "512m"
+            maxHeapSize = "2048m"
+            
+            // Enable parallel test execution
+            maxParallelForks = Runtime.runtime.availableProcessors().intdiv(2) ?: 1
+            forkEvery = 100
+        }
+    }
+    
+    // Configure APK file name
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "WasteToWorth-${variant.name}-${variant.versionName}.apk"
+        }
+    }
+}
+
+// Enable parallel execution for faster builds
+tasks.whenTaskAdded { task ->
+    if (task.name.contains("Test")) {
+        task.maxParallelForks = Runtime.runtime.availableProcessors().intdiv(2) ?: 1
+    }
+}
+
+// Enable build cache
+buildCache {
+    local {
+        directory = new File(rootDir, 'build-cache')
+        removeUnusedEntriesAfterDays = 30
+    }
+}

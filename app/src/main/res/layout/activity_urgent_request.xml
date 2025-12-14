@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background_off_white"
+    tools:context=".UrgentRequestActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="16dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Urgent Requests &amp; Donations"
+            android:textColor="@color/dark_navy_text"
+            android:textSize="24sp"
+            android:fontFamily="@font/opensans"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonUrgentRequest"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Urgent Request"
+            android:textSize="12sp"
+            app:backgroundTint="@color/pastel_pink_warm"
+            app:icon="@android:drawable/ic_dialog_alert"
+            app:iconSize="16dp" />
+
+    </LinearLayout>
+
+    <!-- Description text added below the header -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View available donations and create urgent requests"
+        android:textColor="@color/text_white"
+        android:textSize="14sp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        android:alpha="0.8"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_donations"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        android:clipToPadding="false"/>
+
+</LinearLayout>

@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!--
+        LOCATION PERMISSIONS
+        Required for accessing the device's location for map features
+    -->
+    <!-- Precise location access (GPS) -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- Approximate location access (network-based) -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!--
+        NETWORK PERMISSIONS
+        Required for internet access and network state monitoring
+    -->
+    <!-- General internet access -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- Check network connection status -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- Check WiFi connection status -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!--
+        CAMERA AND STORAGE PERMISSIONS
+        Required for capturing and uploading images
+    -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <!--
+        NOTIFICATION PERMISSIONS
+        Required for Android 13+ to post notifications
+    -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!--
+        AUDIO PERMISSIONS
+        Required for voice search and speech recognition
+    -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <!--
+        HARDWARE FEATURES
+        Define hardware features required or optional for the app
+    -->
+    <!-- Camera hardware (optional: app can work without it) -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" /> <!-- GPS hardware (optional: app can work without it) -->
+    <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="false" /> <!-- Network location provider (optional) -->
+    <uses-feature
+        android:name="android.hardware.location.network"
+        android:required="false" /> <!-- OpenGL ES 2.0 (required for Maps) -->
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <application
+        android:name=".WasteToWorthApplication"
+        android:allowBackup="false"
+        android:fullBackupContent="false"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.WasteToWorth"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+
+        <!--
+             TODO: Before you run your application, you need a Google Maps API key.
+
+             To get one, follow the directions here:
+
+                https://developers.google.com/maps/documentation/android-sdk/get-api-key
+
+             Once you have your API key (it starts with "AIza"), define a new property in your
+             project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
+             "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="YOUR_API_KEY" />
+
+        <activity
+            android:name=".MapsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_maps" />
+        <!--
+            ACTIVITY DECLARATIONS
+            Define all activities in the application with their properties
+        -->
+        <!-- ML Classifier Activity -->
+        <activity
+            android:name=".MLClassifierActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.WasteToWorth" />
+        <!-- Volunteer Orders Activity -->
+        <activity
+            android:name=".VolunteerOrders"
+            android:exported="false"
+            android:theme="@style/Theme.WasteToWorth" /> <!-- User profile management activity -->
+        <activity
+            android:name=".UserdataActivity"
+            android:exported="false" /> <!-- PIN management activity -->
+        <activity
+            android:name=".MyPin"
+            android:exported="false" /> <!-- About/Help activity -->
+        <activity
+            android:name=".AboutActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" /> <!-- Donation Type Selection activity -->
+        <activity
+            android:name=".DonationTypeActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" /> <!-- Onboarding Activity -->
+        <activity
+            android:name=".OnboardingActivity"
+            android:exported="false"
+            android:theme="@style/Theme.WasteToWorth" /> <!-- Google Play Services configuration -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" /> <!-- Enable Google Play Services strict mode checking -->
+        <meta-data
+            android:name="com.google.android.gms.strict_mode"
+            android:value="false" /> <!-- Disable Firebase Performance monitoring to prevent security issues -->
+        <meta-data
+            android:name="firebase_performance_collection_enabled"
+            android:value="false" /> <!-- Disable Firebase Analytics debug mode -->
+        <meta-data
+            android:name="firebase_analytics_collection_enabled"
+            android:value="false" /> <!-- Disable Firebase Crashlytics debug mode -->
+        <meta-data
+            android:name="firebase_crashlytics_collection_enabled"
+            android:value="false" /> <!-- Disable Phenotype API to prevent security exceptions -->
+        <meta-data
+            android:name="phenotype.api.enabled"
+            android:value="false" /> <!-- Disable Google Play Services provider installer -->
+        <meta-data
+            android:name="providerinstaller.enable"
+            android:value="false" /> <!-- Disable Google API client strict mode -->
+        <meta-data
+            android:name="google.api.client.strict_mode"
+            android:value="false" /> <!-- Disable Google Play Services App Check -->
+        <meta-data
+            android:name="firebase_app_check_debug_enabled"
+            android:value="false" /> <!-- Disable Google Play Services Phenotype flags -->
+        <meta-data
+            android:name="phenotype.flags.enabled"
+            android:value="false" />
+        <!--
+            FOOD MAP ACTIVITY
+            Main map interface for viewing food donation locations
+        -->
+        <!-- Can be launched by other apps -->
+        <!-- Reuse existing instance if already running -->
+        <activity
+            android:name=".FoodMap"
+            android:exported="true"
+            android:launchMode="singleTop">
+
+            <!-- Intent filter to handle geo: URIs -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="geo" />
+            </intent-filter>
+        </activity>
+        <!--
+            MAIN ACTIVITY
+            The main activity after successful authentication
+        -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.WasteToWorth.NoActionBar" />
+        <!--
+            CORE FEATURE ACTIVITIES
+            Main functional screens of the application
+        -->
+        <!-- Activity for receiving food donations -->
+        <activity
+            android:name=".Receive"
+            android:exported="false" /> <!-- Activity for making food donations -->
+        <activity
+            android:name=".DonateActivity"
+            android:exported="false" /> <!-- New donation activity with location choice -->
+        <activity
+            android:name=".Donate"
+            android:exported="false" /> <!-- Activity for volunteer-related features -->
+        <activity
+            android:name=".VolunteerActivity"
+            android:exported="false" /> <!-- Activity showing feed of available donations -->
+        <activity
+            android:name=".DonationFeedActivity"
+            android:exported="false" /> <!-- Activity for editing user profile -->
+        <activity
+            android:name=".EditProfileActivity"
+            android:exported="false"
+            android:parentActivityName=".ProfileActivity" /> <!-- Settings activity -->
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" /> <!-- Firebase Messaging Service -->
+        <service
+            android:name=".MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service> <!-- Profile activity -->
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" /> <!-- Help activity -->
+        <activity
+            android:name=".HelpActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" /> <!-- Donation history activity -->
+        <activity
+            android:name=".DonationHistoryActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <!--
+            AUTHENTICATION ACTIVITIES
+            User login and registration screens
+        -->
+        <!-- User login screen -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" /> <!-- Legacy login/registration activity -->
+        <activity
+            android:name=".Logup"
+            android:exported="false" /> <!-- User registration screen -->
+        <activity
+            android:name=".Signup"
+            android:exported="false" /> <!-- NGO role selection activity -->
+        <activity
+            android:name=".RoleSelectionActivity"
+            android:exported="false" /> <!-- NGO login activity -->
+        <activity
+            android:name=".NGOLoginActivity"
+            android:exported="false" /> <!-- NGO registration activity -->
+        <activity
+            android:name=".NGORegistrationActivity"
+            android:exported="false" />
+        <!--
+            LEGACY ACTIVITIES
+            Older versions of screens that might be phased out
+        -->
+        <!--
+            MISCELLANEOUS ACTIVITIES
+            Additional screens and utilities
+        -->
+        <!-- Initial landing/splash screen -->
+        <activity
+            android:name=".landingpage"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.WasteToWorth.NoActionBar" />
+        <activity
+            android:name=".UrgentRequestActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.WasteToWorth.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="MainActivity" />
+        </activity>
+        <!--
+            SPLASH SCREEN
+            Initial loading screen shown when the app launches
+        -->
+        <activity
+            android:name=".SplashScreen"
+            android:exported="true"
+            android:theme="@style/SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <!--
+                Note: This activity is now the launcher entry point
+                It handles the app's initial launch sequence
+            -->
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,17 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme - Night mode uses same light theme for consistency -->
+    <style name="Theme.WasteToWorth" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/pastel_blue_primary</item>
+        <item name="colorPrimaryVariant">@color/pastel_blue_dark</item>
+        <item name="colorOnPrimary">@color/clean_white</item>
+        <item name="colorSecondary">@color/pastel_lavender_accent</item>
+        <item name="colorSecondaryVariant">@color/pastel_lavender_dark</item>
+        <item name="colorOnSecondary">@color/clean_white</item>
+        <item name="android:statusBarColor">@color/pastel_blue_light</item>
+        <item name="android:navigationBarColor">@color/clean_white</item>
+        <item name="android:windowBackground">@color/background_off_white</item>
+        <item name="android:textColor">@color/dark_navy_text</item>
+        <item name="android:textColorPrimary">@color/dark_navy_text</item>
+        <item name="android:textColorSecondary">@color/soft_text_grey</item>
+    </style>
+</resources>

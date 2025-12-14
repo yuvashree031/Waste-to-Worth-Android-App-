@@ -1,0 +1,4 @@
+com/example/wastetoworth/DonationAdapter.class
+com/example/wastetoworth/DonationModel.class
+com/example/wastetoworth/ReceiveActivity.class
+com/example/wastetoworth/Donate.class

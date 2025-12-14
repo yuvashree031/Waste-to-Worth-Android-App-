@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="donation_filters">
+        <item>All</item>
+        <item>Food</item>
+        <item>Clothes</item>
+        <item>Electronics</item>
+        <item>Furniture</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="food_conditions">
+        <item>Select Condition</item>
+        <item>Fresh</item>
+        <item>Good</item>
+        <item>Average</item>
+        <item>Needs to be consumed soon</item>
+    </string-array>
+
+    <string-array name="donation_categories">
+        <item>Select Category</item>
+        <item>Food</item>
+        <item>Books</item>
+        <item>Clothes</item>
+        <item>Things</item>
+        <item>Other</item>
+    </string-array>
+</resources>

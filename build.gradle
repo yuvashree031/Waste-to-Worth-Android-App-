@@ -1,0 +1,77 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext {
+        // Android Gradle Plugin version - updated for Java 21 compatibility
+        agpVersion = '8.3.2'
+
+        // Navigation version
+        navigationVersion = '2.7.5'
+
+        // Kotlin version (using 1.9.22 for Java 21 support)
+        kotlinVersion = '1.9.22'
+    }
+
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath "com.android.tools.build:gradle:$agpVersion"
+        classpath 'com.google.gms:google-services:4.4.0'
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.9.9'
+        classpath 'com.google.firebase:perf-plugin:1.4.2'
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+    }
+}
+
+// Apply plugins that should be available in all modules
+plugins {
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin' version '2.0.1' apply false
+    id 'com.google.dagger.hilt.android' version '2.48.1' apply false
+}
+
+// Configure all projects
+allprojects { project ->
+    // Common repositories for all projects
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+
+    // Configure Java toolchain for all projects
+    plugins.withType(JavaBasePlugin).configureEach {
+        java {
+            // Using Java 17 for Android compatibility
+            sourceCompatibility = JavaVersion.VERSION_17
+            targetCompatibility = JavaVersion.VERSION_17
+        }
+    }
+
+    // Configure Java compile options
+    tasks.withType(JavaCompile).configureEach {
+        options.encoding = 'UTF-8'
+        options.incremental = true
+        options.compilerArgs.addAll(['--release', '17'])
+    }
+
+    // Kotlin compile options
+    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+        kotlinOptions {
+            jvmTarget = '17' // Aligned with Java 17
+            freeCompilerArgs += [
+                    "-Xjvm-default=all",
+                    "-opt-in=kotlin.RequiresOptIn"
+            ]
+        }
+    }
+}
+
+// Clean task to remove build directory
+tasks.register('clean', Delete) {
+    delete rootProject.buildDir
+}
+
+

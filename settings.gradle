@@ -1,0 +1,22 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+
+// Include the app module
+include ':app'
+rootProject.name = 'WASTE-TO-WORTH'
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+// Set Java home to use system's default Java installation
+System.setProperty('org.gradle.java.home', System.getProperty('java.home'))

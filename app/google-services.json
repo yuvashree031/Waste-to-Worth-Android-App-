@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "165124336189",
+    "firebase_url": "https://aahar-app-983e2-default-rtdb.firebaseio.com",
+    "project_id": "aahar-app-983e2",
+    "storage_bucket": "aahar-app-983e2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165124336189:android:03ba86981b45efb9a75854",
+        "android_client_info": {
+          "package_name": "com.example.wastetoworth"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEp5EAMys7lwahPjXZ-A3jQNk6tHX4gy8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

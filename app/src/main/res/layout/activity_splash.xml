@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!-- Background decorative circle - Top Right -->
+    <View
+        android:id="@+id/decorativeCircle1"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/circle_pastel_blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="-50dp"
+        android:layout_marginEnd="-50dp" />
+
+    <!-- Background decorative circle - Bottom Left -->
+    <View
+        android:id="@+id/decorativeCircle2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/circle_pastel_pink"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="-30dp"
+        android:layout_marginBottom="80dp" />
+
+    <!-- Main Content Container -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingHorizontal="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.42">
+
+        <!-- App Icon with pastel lavender background -->
+        <FrameLayout
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:background="@drawable/circle_pastel_lavender"
+            android:padding="28dp">
+
+            <ImageView
+                android:id="@+id/logoImageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/donation_box_icon"
+                android:scaleType="centerInside" />
+
+        </FrameLayout>
+
+        <!-- App Name -->
+        <TextView
+            android:id="@+id/appNameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WasteToWorth"
+            android:textColor="#2C3E50"
+            android:textSize="38sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium"
+            android:letterSpacing="0.03"
+            android:layout_marginTop="36dp"
+            android:gravity="center" />
+
+        <!-- Tagline -->
+        <TextView
+            android:id="@+id/taglineText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Transform waste into worth"
+            android:textColor="#5D6D7E"
+            android:textSize="17sp"
+            android:fontFamily="sans-serif"
+            android:letterSpacing="0.01"
+            android:layout_marginTop="14dp"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+    <!-- Progress Indicator -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="220dp"
+        android:layout_height="4dp"
+        android:indeterminate="true"
+        android:indeterminateTint="#B6D0E6"
+        android:progressTint="#B6D0E6"
+        android:progressBackgroundTint="#D8CEE6"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="70dp" />
+
+    <!-- Loading text -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Loading..."
+        android:textColor="#5D6D7E"
+        android:textSize="15sp"
+        android:fontFamily="sans-serif"
+        app:layout_constraintTop_toBottomOf="@id/progressBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="10dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

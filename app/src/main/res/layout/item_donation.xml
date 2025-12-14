@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="2dp"
+    app:strokeColor="@color/border_light"
+    app:strokeWidth="1dp"
+    android:backgroundTint="@color/clean_white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header with category badge and timestamp -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tvFoodType"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Food Type"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/dark_navy_text"
+                android:singleLine="true"
+                android:ellipsize="end" />
+
+            <TextView
+                android:id="@+id/tvCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Category"
+                android:textSize="11sp"
+                android:textColor="@color/clean_white"
+                android:background="@color/pastel_lavender_accent"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:id="@+id/tvTimestamp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2 hours ago"
+                android:textSize="11sp"
+                android:textColor="@color/soft_text_grey" />
+        </LinearLayout>
+
+        <!-- Urgent Badge (separate row when visible) -->
+        <TextView
+            android:id="@+id/tvUrgentBadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🚨 URGENT REQUEST"
+            android:textSize="13sp"
+            android:textColor="@color/pastel_pink_warm"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"
+            android:visibility="gone" />
+
+        <!-- Food name -->
+        <TextView
+            android:id="@+id/tvFoodName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Food Name"
+            android:textSize="20sp"
+            android:textColor="@color/dark_navy_text"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"
+            android:maxLines="2"
+            android:ellipsize="end" />
+
+        <!-- Description -->
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Food description goes here..."
+            android:textSize="14sp"
+            android:textColor="@color/soft_text_grey"
+            android:lineSpacingExtra="2dp"
+            android:layout_marginBottom="12dp"
+            android:maxLines="3"
+            android:ellipsize="end" />
+
+        <!-- Quantity and Donor info -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tvQuantity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Quantity: 5 people"
+                android:textSize="13sp"
+                android:textColor="@color/dark_navy_text"
+                app:drawableStartCompat="@android:drawable/ic_menu_agenda"
+                android:drawablePadding="6dp"
+                android:drawableTint="@color/pastel_blue_primary"
+                android:singleLine="true"
+                android:ellipsize="end" />
+
+            <TextView
+                android:id="@+id/tvDonorName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="By: John Doe"
+                android:textSize="13sp"
+                android:textColor="@color/soft_text_grey"
+                app:drawableStartCompat="@android:drawable/ic_menu_myplaces"
+                android:drawablePadding="6dp"
+                android:drawableTint="@color/pastel_lavender_accent"
+                android:maxLines="1"
+                android:ellipsize="end" />
+        </LinearLayout>
+
+        <!-- Location (clickable) -->
+        <LinearLayout
+            android:id="@+id/layoutLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp"
+            android:padding="8dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tvLocation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Location: Street Address"
+                android:textSize="13sp"
+                android:textColor="@color/soft_text_grey"
+                app:drawableStartCompat="@android:drawable/ic_dialog_map"
+                android:drawablePadding="6dp"
+                android:drawableTint="@color/pastel_pink_warm"
+                android:maxLines="2"
+                android:ellipsize="end" />
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_chevron_right"
+                android:layout_marginStart="8dp"
+                app:tint="@color/soft_text_grey" />
+        </LinearLayout>
+
+        <!-- Action buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="4dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCall"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Call"
+                android:textSize="11sp"
+                android:layout_marginEnd="4dp"
+                android:textColor="@color/clean_white"
+                app:backgroundTint="@color/pastel_blue_primary"
+                app:icon="@drawable/ic_call"
+                app:iconTint="@color/clean_white"
+                app:cornerRadius="8dp"
+                android:minHeight="40dp"
+                app:iconSize="16dp"
+                app:iconPadding="4dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnViewLocation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Map"
+                android:textSize="11sp"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:textColor="@color/clean_white"
+                app:backgroundTint="@color/pastel_lavender_accent"
+                app:icon="@drawable/ic_location_on"
+                app:iconTint="@color/clean_white"
+                app:cornerRadius="8dp"
+                android:minHeight="40dp"
+                app:iconSize="16dp"
+                app:iconPadding="4dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnReceive"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Receive"
+                android:textSize="11sp"
+                android:layout_marginStart="4dp"
+                android:textColor="@color/clean_white"
+                app:backgroundTint="@color/pastel_pink_warm"
+                app:cornerRadius="8dp"
+                android:minHeight="40dp" />
+        </LinearLayout>
+
+        <!-- Received status -->
+        <TextView
+            android:id="@+id/tvReceivedStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="✓ Already received"
+            android:textSize="14sp"
+            android:textColor="@android:color/holo_green_dark"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            android:visibility="gone" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

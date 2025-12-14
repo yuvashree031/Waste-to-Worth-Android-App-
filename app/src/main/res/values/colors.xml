@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- ========================================= -->
+    <!-- MINIMAL WHITE THEME - PASTEL COLOR PALETTE -->
+    <!-- ========================================= -->
+    
+    <!-- Primary Pastel Colors -->
+    <color name="pastel_blue_primary">#B6D0E6</color>
+    <color name="pastel_lavender_accent">#D8CEE6</color>
+    <color name="pastel_pink_warm">#F5D0D6</color>
+    <color name="clean_white">#FFFFFF</color>
+    <color name="soft_text_grey">#5D6D7E</color>
+    <color name="dark_navy_text">#2C3E50</color>
+    
+    <!-- Lighter variations for backgrounds -->
+    <color name="pastel_blue_light">#E8F0F7</color>
+    <color name="pastel_lavender_light">#F0EBF5</color>
+    <color name="pastel_pink_light">#FBF0F2</color>
+    
+    <!-- Darker variations for pressed states -->
+    <color name="pastel_blue_dark">#9AB8D1</color>
+    <color name="pastel_lavender_dark">#C3B5D1</color>
+    <color name="pastel_pink_dark">#E8B8C0</color>
+    
+    <!-- Functional colors with pastel theme -->
+    <color name="success_pastel">#B8E6D5</color>
+    <color name="warning_pastel">#F5E6B6</color>
+    <color name="error_pastel">#F5C6C6</color>
+    
+    <!-- Background variations -->
+    <color name="background_white">#FFFFFF</color>
+    <color name="background_off_white">#FAFBFC</color>
+    <color name="background_light_grey">#F5F7F9</color>
+    
+    <!-- Border and divider colors -->
+    <color name="border_light">#E8ECF0</color>
+    <color name="divider_light">#F0F2F5</color>
+    
+    <!-- Overlay colors -->
+    <color name="overlay_white_80">#CCFFFFFF</color>
+    <color name="overlay_dark_20">#332C3E50</color>
+    
+    <!-- ========================================= -->
+    <!-- WasteToWorth Dark Blue and White Theme -->
+    <color name="primary_dark_blue">#1A237E</color>
+    <color name="primary_blue">#3F51B5</color>
+    <color name="light_blue">#5C6BC0</color>
+    <color name="accent_blue">#2196F3</color>
+    <color name="pure_white">#FFFFFF</color>
+    <color name="off_white">#F8F9FA</color>
+    <color name="light_gray">#E3F2FD</color>
+    <color name="dark_text">#212121</color>
+    <color name="light_text">#757575</color>
+    <color name="background_light">#FFFFFF</color>
+    <color name="w2w_primary">#6200EE</color>
+    <!-- or any other color you want -->
+    <!-- or any other color you want -->
+    <!-- Primary colors -->
+    <color name="primary_color">#4CAF50</color>
+    <color name="primary_dark">#388E3C</color>
+    <color name="primary_light">#C8E6C9</color>
+    <color name="map_background">#F5F5F5</color>
+    <color name="pastel_lavender">#E2D4F0</color>
+    <color name="pastel_mint">#B4E9D6</color>
+    <color name="pastel_mint_dark">#9BD5C1</color>
+    <color name="pastel_peach">#FFDAC1</color>
+    <color name="pastel_sky">#C7EEFF</color>
+    <color name="pastel_coral">#FFAAA7</color>
+    <color name="pastel_yellow">#FFEEAD</color>
+    <color name="pastel_rose">#FFB7B7</color>
+    <color name="pastel_cream">#FFF9F5</color>
+    <color name="pastel_peach_light">#FFE8D6</color>
+    <color name="pastel_white">#FFFFFF</color>
+    <color name="soft_dark_text">#4A4A4A</color>
+    <color name="soft_medium_text">#7A7A7A</color>
+    <color name="pastel_orange">#FFB300</color>
+
+
+    <!-- Secondary colors -->
+    <color name="secondary_color">#FF9800</color>
+    <color name="secondary_dark">#F57C00</color>
+    <color name="secondary_light">#FFE0B2</color>
+    <color name="teal_700">#00796B</color>
+    <color name="teal_500">#009688</color>
+    <color name="teal_200">#80CBC4</color>
+
+    <!-- Standard Android Colors (these are already defined in Android but included for reference) -->
+
+    <color name="darker_gray">#757575</color>
+
+
+    <!-- Gray colors -->
+    <color name="gray_400">#BDBDBD</color>
+    <color name="gray_600">#757575</color>
+    
+    <!-- Text Colors -->
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+
+    <!-- Background Colors -->
+
+
+    <!-- Status Colors -->
+    <color name="success">#4CAF50</color>
+    <color name="warning">#FFC107</color>
+    <color name="error">#F44336</color>
+
+    <!-- Common Google Sign-in Colors -->
+    <color name="common_google_signin_btn_text_dark_focused">#4285F4</color>
+
+    <!-- Accent color -->
+    <color name="accent_color">#2196F3</color>
+
+    <!-- Text colors -->
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#757575</color>
+    <color name="text_white">#FFFFFF</color>
+
+    <!-- Background colors -->
+
+    <color name="background_dark">#303030</color>
+
+    <!-- Card colors -->
+    <color name="volunteer_color">#9C27B0</color>
+    <color name="about_color">#607D8B</color>
+    <color name="logout_color">#F44336</color>
+    <!-- Legacy colors for compatibility -->
+    <color name="black">#000</color>
+    <color name="colorPrimaryDark">#1A237E</color>
+    <color name="white">#fff</color>
+    <color name="gray">#757575</color>
+    <color name="colorAccent">#2196F3</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="zircon">#E3F2FD</color>
+    <color name="red">#D32F2F</color>
+    <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">#3F51B5</color>
+    
+    <!-- Additional colors for Material Components -->
+    <color name="primary">#4CAF50</color>
+
+    <color name="secondary">#FF9800</color>
+
+    <color name="logout">#F44336</color>
+    <color name="logout_dark">#B71C1C</color>
+    <color name="map">#2196F3</color>
+    <color name="map_dark">#1565C0</color>
+    <color name="pin">#9C27B0</color>
+    <color name="pin_dark">#6A1B9A</color>
+    <color name="history">#607D8B</color>
+    <color name="history_dark">#37474F</color>
+    <color name="about">#43A047</color>
+    <color name="about_dark">#1B5E20</color>
+    <color name="contact">#1976D2</color>
+    <color name="contact_dark">#0D47A1</color>
+    <color name="volunteer">#FFB300</color>
+    <color name="volunteer_dark">#FF6F00</color>
+    <color name="card_bg1">#E8F5E9</color>
+    <color name="card_bg2">#FFF3E0</color>
+    <color name="card_bg3">#FFEBEE</color>
+    <color name="card_bg4">#E3F2FD</color>
+    <color name="card_bg5">#F3E5F5</color>
+    <color name="card_bg6">#ECEFF1</color>
+    <color name="card_bg7">#E8F5E9</color>
+    <color name="card_bg8">#E3F2FD</color>
+    <color name="card_bg9">#FFF8E1</color>
+    <color name="white_20">#33FFFFFF</color>
+    
+    <!-- Additional pastel colors for new dashboard cards -->
+    <color name="pastel_indigo">#C5CAE9</color>
+    <color name="pastel_gray">#E0E0E0</color>
+    <color name="pastel_teal">#B2DFDB</color>
+    <color name="pastel_violet">#D1C4E9</color>
+    <color name="pastel_violet_dark">#B39DDB</color>
+    <color name="soft_cream">#FFF9F5</color>
+    
+    <!-- Modern gradient colors inspired by reference images -->
+    <color name="gradient_purple_start">#A78BFA</color>
+    <color name="gradient_purple_end">#C4B5FD</color>
+    <color name="gradient_pink_start">#FCA5A5</color>
+    <color name="gradient_pink_end">#FBBF24</color>
+    <color name="gradient_green_start">#6EE7B7</color>
+    <color name="gradient_green_end">#34D399</color>
+    <color name="gradient_blue_start">#93C5FD</color>
+    <color name="gradient_blue_end">#60A5FA</color>
+    <color name="gradient_mint_start">#A7F3D0</color>
+    <color name="gradient_mint_end">#6EE7B7</color>
+    
+    <!-- Mood tracking colors -->
+    <color name="mood_happy">#FCD34D</color>
+    <color name="mood_calm">#A78BFA</color>
+    <color name="mood_relax">#FB923C</color>
+    <color name="mood_focused">#60A5FA</color>
+    
+    <!-- Card background colors with transparency -->
+    <color name="card_overlay_light">#F0FFFFFF</color>
+    <color name="card_overlay_dark">#E0000000</color>
+    
+    <!-- Status bar and navigation colors -->
+    <color name="status_bar_gradient">#E0C3FC</color>
+    <color name="nav_bar_light">#FAFAFA</color>
+</resources>

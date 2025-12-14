@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pastel_violet"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center">
+
+        <!-- App Logo -->
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_food_bank"
+            android:layout_marginBottom="16dp"
+            app:tint="@color/white" />
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/tv_ngo_registration_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NGO Registration"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Subtitle -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register your organization to start receiving donations"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:alpha="0.9"
+            android:layout_marginBottom="24dp"
+            android:gravity="center" />
+
+        <!-- Registration Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="@color/white"
+            app:strokeColor="@color/pastel_violet_dark"
+            app:strokeWidth="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Organization Name -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium"
+                    app:boxStrokeColor="@color/pastel_violet_dark"
+                    app:hintTextColor="@color/pastel_violet_dark"
+                    app:startIconDrawable="@drawable/ic_food_bank"
+                    app:startIconTint="@color/pastel_violet_dark">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_organization_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Organization Name"
+                        android:inputType="textCapWords"
+                        android:padding="12dp"
+                        android:background="@drawable/edit_text_background" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Email -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium"
+                    app:boxStrokeColor="@color/pastel_violet_dark"
+                    app:hintTextColor="@color/pastel_violet_dark"
+                    app:startIconDrawable="@drawable/ic_baseline_email_24"
+                    app:startIconTint="@color/pastel_violet_dark">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_ngo_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Organization Email"
+                        android:inputType="textEmailAddress"
+                        android:padding="12dp"
+                        android:background="@drawable/edit_text_background" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Password -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium"
+                    app:boxStrokeColor="@color/pastel_violet_dark"
+                    app:hintTextColor="@color/pastel_violet_dark"
+                    app:passwordToggleEnabled="true"
+                    app:startIconDrawable="@drawable/ic_baseline_lock_24"
+                    app:startIconTint="@color/pastel_violet_dark">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_ngo_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:padding="12dp"
+                        android:background="@drawable/edit_text_background" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Confirm Password -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium"
+                    app:boxStrokeColor="@color/pastel_violet_dark"
+                    app:hintTextColor="@color/pastel_violet_dark"
+                    app:passwordToggleEnabled="true"
+                    app:startIconDrawable="@drawable/ic_baseline_lock_24"
+                    app:startIconTint="@color/pastel_violet_dark">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_ngo_confirm_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Confirm Password"
+                        android:inputType="textPassword"
+                        android:padding="12dp"
+                        android:background="@drawable/edit_text_background" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Registration Number -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium"
+                    app:boxStrokeColor="@color/pastel_violet_dark"
+                    app:hintTextColor="@color/pastel_violet_dark"
+                    app:startIconDrawable="@drawable/ic_description"
+                    app:startIconTint="@color/pastel_violet_dark">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_registration_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Registration Number"
+                        android:inputType="textCapCharacters"
+                        android:padding="12dp"
+                        android:background="@drawable/edit_text_background" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Phone -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium"
+                    app:boxStrokeColor="@color/pastel_violet_dark"
+                    app:hintTextColor="@color/pastel_violet_dark"
+                    app:startIconDrawable="@drawable/ic_phone"
+                    app:startIconTint="@color/pastel_violet_dark">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_ngo_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Contact Phone"
+                        android:inputType="phone"
+                        android:padding="12dp"
+                        android:background="@drawable/edit_text_background" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Address -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium"
+                    app:boxStrokeColor="@color/pastel_violet_dark"
+                    app:hintTextColor="@color/pastel_violet_dark"
+                    app:startIconDrawable="@drawable/ic_location"
+                    app:startIconTint="@color/pastel_violet_dark">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_ngo_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Organization Address"
+                        android:inputType="textMultiLine"
+                        android:minLines="2"
+                        android:padding="12dp"
+                        android:background="@drawable/edit_text_background" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Mission Statement -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium"
+                    app:boxStrokeColor="@color/pastel_violet_dark"
+                    app:hintTextColor="@color/pastel_violet_dark"
+                    app:startIconDrawable="@drawable/ic_description"
+                    app:startIconTint="@color/pastel_violet_dark">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_mission_statement"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Mission Statement"
+                        android:inputType="textMultiLine"
+                        android:minLines="3"
+                        android:padding="12dp"
+                        android:background="@drawable/edit_text_background" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Register Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_register_ngo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Register NGO"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:padding="16dp"
+                    app:backgroundTint="@color/pastel_violet_dark"
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="16dp"
+                    app:cornerRadius="8dp"
+                    app:elevation="4dp" />
+
+                <!-- Back to Login -->
+                <TextView
+                    android:id="@+id/tv_back_to_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Already have an account? Login →"
+                    android:textSize="14sp"
+                    android:textColor="@color/pastel_violet_dark"
+                    android:layout_gravity="center_horizontal"
+                    android:padding="8dp"
+                    android:background="?android:attr/selectableItemBackground" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+</ScrollView>

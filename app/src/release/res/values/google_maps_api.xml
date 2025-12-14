@@ -1,0 +1,14 @@
+<resources>
+    <!--
+    Release Google Maps API key configuration.
+    
+    This key should be restricted to your release signing certificate and
+    package name for security purposes.
+    
+    To get your own API key, follow the directions here:
+    https://developers.google.com/maps/documentation/android/signup
+    
+    Once you have your key (it starts with "AIza"), replace the value below.
+    -->
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyDEp5EAMys7lwahPjXZ-A3jQNk6tHX4gy8</string>
+</resources>
