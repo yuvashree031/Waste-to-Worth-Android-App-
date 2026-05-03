@@ -71,7 +71,7 @@ public class DonationAdapter extends RecyclerView.Adapter<DonationAdapter.Donati
             return;
         }
 
-        // Title and type
+        //Title
         holder.tvFoodName.setText(donation.getFoodName() != null ? donation.getFoodName() : (donation.getName() != null ? donation.getName() : "Donation"));
         holder.tvFoodType.setText(donation.getType() != null ? donation.getType() : "");
 
