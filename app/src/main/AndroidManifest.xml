@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <!--
-        LOCATION PERMISSIONS
+        LOCATION PERMISSIONS here
         Required for accessing the device's location for map features
     -->
     <!-- Precise location access (GPS) -->
