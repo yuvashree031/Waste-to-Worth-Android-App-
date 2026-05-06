@@ -1,5 +1,7 @@
 package com.example.wastetoworth;
 
+//import statements
+
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.util.Log;
@@ -12,6 +14,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 
 /**
  * FoodWasteClassifier - ML-based classifier for food waste detection and categorization
