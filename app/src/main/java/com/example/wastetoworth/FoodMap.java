@@ -119,7 +119,7 @@ public class FoodMap extends AppCompatActivity implements
 
         loadMarkers();
     }
-
+//buildGoogleApi
     protected synchronized void buildGoogleApiClient() {
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(this)
