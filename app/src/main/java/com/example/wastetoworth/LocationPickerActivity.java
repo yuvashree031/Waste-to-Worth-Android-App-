@@ -37,7 +37,7 @@ public class LocationPickerActivity extends AppCompatActivity implements OnMapRe
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+        
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         if (mapFragment != null) {
