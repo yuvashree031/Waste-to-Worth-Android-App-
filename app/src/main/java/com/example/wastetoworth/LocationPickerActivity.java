@@ -28,7 +28,7 @@ public class LocationPickerActivity extends AppCompatActivity implements OnMapRe
     private FusedLocationProviderClient fusedLocationClient;
     private Marker selectedMarker;
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
-    private LatLng selectedLocation = new LatLng(0.0, 0.0); // Default to (0,0)
+    private LatLng selectedLocation = new LatLng(0.0, 0.0); 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
