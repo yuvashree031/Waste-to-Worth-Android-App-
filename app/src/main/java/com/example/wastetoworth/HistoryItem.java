@@ -7,8 +7,8 @@ public class HistoryItem {
     private String title;
     private String description;
     private Date date;
-    private String status; // e.g., "Completed", "In Progress", "Failed"
-    private String type;   // e.g., "Donation", "Request", "Volunteer"
+    private String status; 
+    private String type;   
 
     // Empty constructor required for Firestore
     public HistoryItem() {
