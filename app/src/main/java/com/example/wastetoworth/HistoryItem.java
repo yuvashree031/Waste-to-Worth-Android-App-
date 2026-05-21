@@ -10,7 +10,7 @@ public class HistoryItem {
     private String status; 
     private String type;   
 
-    // Empty constructor required for Firestore
+    
     public HistoryItem() {
     }
 
