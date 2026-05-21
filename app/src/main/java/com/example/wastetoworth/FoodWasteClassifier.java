@@ -1,7 +1,5 @@
 package com.example.wastetoworth;
 
-//import statements
-
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.util.Log;
