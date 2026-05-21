@@ -15,7 +15,7 @@ public class DonationModel {
     private String quantity;
     private String donorName;
     private String donorId;
-    private String location;  // Changed from GeoPoint to String
+    private String location;  
     private String address;
     private Timestamp timestamp;
     private boolean isReceived;
