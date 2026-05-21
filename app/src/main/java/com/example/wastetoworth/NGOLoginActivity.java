@@ -17,12 +17,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-/**
- * NGOLoginActivity - Dedicated login activity for NGO organizations
- * 
- * This activity provides NGO-specific authentication with additional fields
- * and validation requirements for organizational accounts.
- */
+
 public class NGOLoginActivity extends AppCompatActivity {
     
     // UI Components
