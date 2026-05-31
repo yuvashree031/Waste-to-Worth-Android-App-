@@ -1,10 +1,5 @@
 package com.example.wastetoworth;
-/**
- * Translate the following code into Java follow the following instructions:
- * - Keep the code as close to the original as possible
- * - Make the code functional in Java
- * - The output should be in Java with as few changes as possible
-/*************  ✨ Smart Paste 📚  *************/
+
 /*******  a64f1575-fb4b-4158-89a7-010003f7b092  *******/import android.Manifest;
 import android.app.AlertDialog;
 import android.content.Intent;
