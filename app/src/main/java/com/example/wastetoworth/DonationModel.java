@@ -2,10 +2,7 @@ package com.example.wastetoworth;
 
 import com.google.firebase.Timestamp;
 
-/**
- * Model class representing a donation in the Waste to Worth application.
- * This class maps to the donations collection in Firestore.
- */
+
 public class DonationModel {
 
     private String documentId;
