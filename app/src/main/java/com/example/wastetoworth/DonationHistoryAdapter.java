@@ -1,5 +1,6 @@
 package com.example.wastetoworth;
 
+//import
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
