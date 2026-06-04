@@ -1,6 +1,6 @@
 package com.example.wastetoworth;
 
-/*******  a64f1575-fb4b-4158-89a7-010003f7b092  *******/import android.Manifest;
+import android.Manifest;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
