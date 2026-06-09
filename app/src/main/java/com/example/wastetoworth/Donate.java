@@ -1,5 +1,5 @@
 package com.example.wastetoworth;
-//import
+
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.pm.PackageManager;
