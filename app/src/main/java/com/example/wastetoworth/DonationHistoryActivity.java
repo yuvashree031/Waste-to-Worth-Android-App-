@@ -1,6 +1,6 @@
 package com.example.wastetoworth;
 
-//import
+
 import com.google.firebase.firestore.ListenerRegistration;
 
 import android.content.Context;
