@@ -1,5 +1,6 @@
 package com.example.wastetoworth;
-// Import necessary Android, Google Maps, Firebase, and utility classes
+
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
