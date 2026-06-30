@@ -1,5 +1,4 @@
 package com.example.wastetoworth;
-//123
 
 import android.content.Context;
 import android.content.Intent;
