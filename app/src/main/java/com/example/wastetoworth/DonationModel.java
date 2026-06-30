@@ -2,7 +2,7 @@ package com.example.wastetoworth;
 
 import com.google.firebase.Timestamp;
 
-
+//123
 public class DonationModel {
 
     private String documentId;
