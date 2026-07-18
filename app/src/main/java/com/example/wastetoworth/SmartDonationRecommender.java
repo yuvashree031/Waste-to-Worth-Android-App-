@@ -1,5 +1,5 @@
 package com.example.wastetoworth;
-//imp
+
 import android.content.Context;
 import android.location.Location;
 import com.google.firebase.firestore.FirebaseFirestore;
